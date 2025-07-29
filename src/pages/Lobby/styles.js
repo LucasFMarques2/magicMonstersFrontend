@@ -35,25 +35,6 @@ export const TopButtonsContainer = styled.div`
   }
 `
 
-export const NavButton = styled.button`
-  padding: 0.8rem 1.5rem;
-  font-size: 0.8rem;
-
-  color: #ffffff;
-  background-color: #444;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
-  &:hover {
-    transform: scale(0.9);
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 0.8rem;
-  }
-`
 
 export const Title = styled.h1`
   font-size: 3rem;
@@ -140,31 +121,6 @@ export const Stat = styled.span`
   color: #ccc;
 `
 
-export const FindMatchButton = styled.button`
-  padding: 1.5rem 4rem;
-  font-size: 2rem;
-
-  color: #ffffffff;
-  background-color: #1c7c3c;
-  border: none;
-  border-radius: 15px;
-  transition: all 0.2s;
-
-  &:disabled {
-    background-color: #555;
-    cursor: not-allowed;
-  }
-  &:not(:disabled):hover {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    padding: 1rem;
-    width: 100%;
-    max-width: 280px;
-  }
-`
 
 const spin = keyframes`
   0% { transform: rotate(0deg); }
@@ -204,17 +160,3 @@ export const SearchingOverlay = styled.div`
   }
 `
 
-export const CancelButton = styled.button`
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-
-  color: #ff5555;
-  background-color: transparent;
-  border: 2px solid #ff5555;
-  border-radius: 8px;
-  &:hover {
-    background-color: #ff5555;
-    color: white;
-  }
-`

@@ -154,31 +154,7 @@ export const Controls = styled.div`
   }
 `
 
-export const ActionButton = styled.button`
-  padding: 1rem;
-  font-size: 1.2rem;
 
-  color: white;
-  background-color: #444;
-  border: 2px solid #666;
-  border-radius: 8px;
-  transition: all 0.2s;
-
-  &:not(:disabled):hover {
-    background-color: #61dafb;
-    color: black;
-    transform: translateY(-3px);
-  }
-
-  &:disabled {
-    background-color: #222;
-    color: #555;
-    cursor: not-allowed;
-  }
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-`
 
 export const EndGameOverlay = styled.div`
   position: fixed;
@@ -203,22 +179,4 @@ export const EndGameOverlay = styled.div`
     }
   }
 `
-export const NavButton = styled.button`
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
 
-  color: #282c34;
-  background-color: #61dafb;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-  @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-`

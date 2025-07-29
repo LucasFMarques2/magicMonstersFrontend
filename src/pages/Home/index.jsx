@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import { Container, PlayButton, Title } from './styles'
+import { Container, Title } from './styles'
+import { Button } from '../../components/Button'
 
 export const HomePage = () => {
   const navigate = useNavigate()
@@ -7,7 +8,7 @@ export const HomePage = () => {
   return (
     <Container>
       <Title>Magic Monsters</Title>
-      <PlayButton onClick={() => navigate('/create-player')}>Jogar</PlayButton>
+      <Button onClick={() => navigate('/create-player')}>Jogar</Button>
     </Container>
   )
 }

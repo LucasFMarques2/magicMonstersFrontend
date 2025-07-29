@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
-import { usePlayer } from '../../hooks/usePlayer'
-import api from '../../services/api'
-
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Button } from '../../components/Button'
+import { Input } from '../../components/Input'
+import { usePlayer } from '../../hooks/usePlayer'
+import api from '../../services/api'
 
 import {
   AddCharacterButton,
@@ -18,9 +19,7 @@ import {
   EmptyStateMessage,
   ErrorMessage,
   FilterInput,
-  NicknameInput,
   SlideWrapper,
-  SubmitButton,
   SwiperContainer,
   Title,
 } from './styles'
@@ -166,18 +165,19 @@ export const CreatePlayerPage = () => {
       {renderCharacterSelector()}
 
       <CreationForm onSubmit={handleSubmit}>
-        <NicknameInput
+        <Input
           type='text'
           placeholder='Digite seu nome'
           value={nickname}
           onChange={e => setNickname(e.target.value)}
         />
-        <SubmitButton
+        <Button
           type='submit'
+          variant='primary'
           disabled={!selectedCharacterId || !nickname || loading}
         >
           {loading ? 'Criando...' : 'Confirmar'}
-        </SubmitButton>
+        </Button>
       </CreationForm>
 
       {error && <ErrorMessage>{error}</ErrorMessage>}

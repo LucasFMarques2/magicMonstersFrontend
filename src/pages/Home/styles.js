@@ -30,23 +30,3 @@ export const Title = styled.h1`
   }
 `
 
-export const PlayButton = styled.button`
-  padding: 1rem 3rem;
-  font-size: 2rem;
-  color: #ffffffff;
-  background-color: #860dd6ff;
-
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-  }
-`

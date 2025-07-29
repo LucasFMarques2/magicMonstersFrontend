@@ -156,37 +156,6 @@ export const CreationForm = styled.form`
   max-width: 400px;
 `
 
-export const NicknameInput = styled.input`
-  width: 100%;
-  padding: 0.8rem;
-  font-size: 1.2rem;
-  background-color: #20232a;
-  border: 2px solid #444;
-  border-radius: 5px;
-  color: white;
-  text-align: center;
-
-  &:focus {
-    outline: none;
-    border-color: #61dafb;
-  }
-`
-
-export const SubmitButton = styled.button`
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-
-  color: #ffffffff;
-  background-color: #860dd6ff;
-  border: none;
-  border-radius: 10px;
-  transition: background-color 0.2s;
-  &:disabled {
-    background-color: #555;
-    cursor: not-allowed;
-  }
-`
-
 export const ErrorMessage = styled.p`
   color: #ff5555;
   margin-top: 1rem;

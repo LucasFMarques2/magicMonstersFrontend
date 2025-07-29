@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
+import { Button } from '../../components/Button'
 import { usePlayer } from '../../hooks/usePlayer'
 import { useSocket } from '../../hooks/useSocket'
 import api from '../../services/api'
@@ -11,12 +12,9 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import {
-  CancelButton,
   Container,
-  FindMatchButton,
   MonsterCard,
   MonsterName,
-  NavButton,
   SearchingOverlay,
   Stat,
   Stats,
@@ -104,21 +102,20 @@ export const LobbyPage = () => {
         <SearchingOverlay>
           <div className='spinner'></div>
           <p>Procurando oponente...</p>
-          <CancelButton onClick={handleCancelSearch}>Cancelar</CancelButton>
+          <Button variant='danger' onClick={handleCancelSearch}>
+            Cancelar
+          </Button>
         </SearchingOverlay>
       )}
 
       <Container>
         <TopButtonsContainer>
-          <NavButton onClick={() => navigate('/dashboard')}>
+          <Button variant='neutral' onClick={() => navigate('/dashboard')}>
             Voltar ao Dashboard
-          </NavButton>
-          <NavButton
-            style={{ backgroundColor: '#1c7c3c' }}
-            onClick={() => navigate('/create-monster')}
-          >
+          </Button>
+          <Button variant='confirm' onClick={() => navigate('/create-monster')}>
             Criar Novo Monstro
-          </NavButton>
+          </Button>
         </TopButtonsContainer>
 
         <Title>Escolha seu Monstro</Title>
@@ -148,13 +145,13 @@ export const LobbyPage = () => {
             ))}
           </Swiper>
         </SwiperContainer>
-
-        <FindMatchButton
+        <Button
+          variant='confirm'
           disabled={!selectedMonsterId}
           onClick={handleFindMatch}
         >
           Procurar Partida
-        </FindMatchButton>
+        </Button>
       </Container>
     </>
   )

@@ -1,24 +1,23 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { toast } from 'sonner'
+import { Button } from '../../components/Button'
 import { usePlayer } from '../../hooks/usePlayer'
 import { useSocket } from '../../hooks/useSocket'
 import api from '../../services/api'
-import { toast } from 'sonner'
 
 import {
-  Container,
-  Arena,
-  MonsterContainer,
-  InfoBox,
-  MonsterName,
-  HealthBarOuter,
-  HealthBarInner,
-  GifDisplay,
   ActionLog,
+  Arena,
+  Container,
   Controls,
-  ActionButton,
   EndGameOverlay,
-  NavButton,
+  GifDisplay,
+  HealthBarInner,
+  HealthBarOuter,
+  InfoBox,
+  MonsterContainer,
+  MonsterName,
 } from './styles'
 
 const ATTACK_ANIMATION_DURATION = 1000
@@ -230,9 +229,9 @@ export const BattlePage = () => {
       {showEndGameOverlay && (
         <EndGameOverlay $isWinner={isWinner}>
           <h1>{isWinner ? 'Vitória!' : 'Derrota!'}</h1>
-          <NavButton onClick={() => navigate('/lobby')}>
+          <Button variant='light' onClick={() => navigate('/lobby')}>
             Voltar ao Lobby
-          </NavButton>
+          </Button>
         </EndGameOverlay>
       )}
 
@@ -282,19 +281,22 @@ export const BattlePage = () => {
         <ActionLog>{actionLog}</ActionLog>
 
         <Controls>
-          <ActionButton
+          <Button
+            variant='neutral'
             disabled={!isMyTurn || isFinished || isAnimating}
             onClick={() => handleAction('attack')}
           >
             Atacar
-          </ActionButton>
-          <ActionButton
+          </Button>
+          <Button
+            variant='neutral'
             disabled={!isMyTurn || isFinished || isAnimating}
             onClick={() => handleAction('defend')}
           >
             Defender
-          </ActionButton>
-          <ActionButton
+          </Button>
+          <Button
+            variant='neutral'
             disabled={
               !isMyTurn ||
               isFinished ||
@@ -305,13 +307,14 @@ export const BattlePage = () => {
           >
             Especial{' '}
             {myState.specialCooldown > 0 ? `(${myState.specialCooldown})` : ''}
-          </ActionButton>
-          <ActionButton
+          </Button>
+          <Button
+            variant='danger'
             disabled={isFinished || isAnimating}
             onClick={() => handleAction('forfeit')}
           >
             Desistir
-          </ActionButton>
+          </Button>
         </Controls>
       </Container>
     </>
