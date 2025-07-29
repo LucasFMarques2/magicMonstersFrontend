@@ -154,7 +154,7 @@ export const CreatePlayerPage = () => {
         Criar Novo Personagem
       </AddCharacterButton>
 
-      <Title>Crie seu Jogador</Title>
+      <Title>Crie seu invocador</Title>
 
       <FilterInput
         type='text'
